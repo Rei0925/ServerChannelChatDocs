@@ -1,0 +1,40 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.mcgendai.chat.serverChannelChat.channel////PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.channel/index.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.channel/ChannelData///PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.channel/-channel-data/index.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.channel/ChannelData/ChannelData/#kotlin.String#java.util.UUID#kotlin.Boolean#java.util.UUID?#kotlin.collections.List[java.util.UUID]#kotlin.String/PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.channel/-channel-data/-channel-data.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.channel/ChannelData/format/#/PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.channel/-channel-data/format.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.channel/ChannelData/isGlobalChannel/#/PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.channel/-channel-data/is-global-channel.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.channel/ChannelData/member/#/PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.channel/-channel-data/member.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.channel/ChannelData/name/#/PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.channel/-channel-data/name.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.channel/ChannelData/owner/#/PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.channel/-channel-data/owner.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.channel/ChannelData/uuid/#/PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.channel/-channel-data/uuid.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.paper////PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.paper/index.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.paper/ChatListener///PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.paper/-chat-listener/index.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.paper/ChatListener/ChatListener/#com.mcgendai.chat.serverChannelChat.util.Japaniser/PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.paper/-chat-listener/-chat-listener.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.paper/ChatListener/onChat/#io.papermc.paper.event.player.AsyncChatEvent/PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.paper/-chat-listener/on-chat.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.util////PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.util/index.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.util/GoogleIME///PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.util/-google-i-m-e/index.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.util/GoogleIME/GoogleIME/#/PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.util/-google-i-m-e/-google-i-m-e.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.util/GoogleIME/convert/#kotlin.String/PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.util/-google-i-m-e/convert.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.util/Japaniser///PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.util/-japaniser/index.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.util/Japaniser/Japaniser/#com.mcgendai.chat.serverChannelChat.util.GoogleIME/PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.util/-japaniser/-japaniser.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.util/Japaniser/conv/#kotlin.String#kotlin.Boolean/PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.util/-japaniser/conv.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.util/SudachiIME///PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.util/-sudachi-i-m-e/index.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.util/SudachiIME/SudachiIME/#/PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.util/-sudachi-i-m-e/-sudachi-i-m-e.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.util/SudachiIME/convert/#kotlin.String/PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.util/-sudachi-i-m-e/convert.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.util/YukiKanaConverter///PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.util/-yuki-kana-converter/index.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.util/YukiKanaConverter/conv/#kotlin.String?/PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.util/-yuki-kana-converter/conv.html
+$dokka.location:com.mcgendai.chat.serverChannelChat.util/YukiKanaConverter/fixBrackets/#kotlin.String?/PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat.util/-yuki-kana-converter/fix-brackets.html
+$dokka.location:com.mcgendai.chat.serverChannelChat////PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat/index.html
+$dokka.location:com.mcgendai.chat.serverChannelChat/ServerChannelChatPaper///PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat/-server-channel-chat-paper/index.html
+$dokka.location:com.mcgendai.chat.serverChannelChat/ServerChannelChatPaper/ServerChannelChatPaper/#/PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat/-server-channel-chat-paper/-server-channel-chat-paper.html
+$dokka.location:com.mcgendai.chat.serverChannelChat/ServerChannelChatPaper/googleIME/#/PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat/-server-channel-chat-paper/google-i-m-e.html
+$dokka.location:com.mcgendai.chat.serverChannelChat/ServerChannelChatPaper/japaniser/#/PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat/-server-channel-chat-paper/japaniser.html
+$dokka.location:com.mcgendai.chat.serverChannelChat/ServerChannelChatPaper/onDisable/#/PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat/-server-channel-chat-paper/on-disable.html
+$dokka.location:com.mcgendai.chat.serverChannelChat/ServerChannelChatPaper/onEnable/#/PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat/-server-channel-chat-paper/on-enable.html
+$dokka.location:com.mcgendai.chat.serverChannelChat/ServerChannelChatPaper/onLoad/#/PointingToDeclaration/-server-channel-chat/com.mcgendai.chat.serverChannelChat/-server-channel-chat-paper/on-load.html
+com.mcgendai.chat.serverChannelChat
+com.mcgendai.chat.serverChannelChat.channel
+com.mcgendai.chat.serverChannelChat.paper
+com.mcgendai.chat.serverChannelChat.util

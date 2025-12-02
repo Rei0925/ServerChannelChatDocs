@@ -1,0 +1,8 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+$dokka.location:com.mcgendai.chat.serverChannelChat.paper/ChatListener.WebMeta///PointingToDeclaration/com/mcgendai/chat/serverChannelChat/paper/ChatListener.WebMeta.html
+com.mcgendai.chat.serverChannelChat
+com.mcgendai.chat.serverChannelChat.channel
+com.mcgendai.chat.serverChannelChat.paper
+com.mcgendai.chat.serverChannelChat.util
+com.mcgendai.chat.serverChannelChat.util.db

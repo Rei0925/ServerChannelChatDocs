@@ -1,0 +1,7 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+
+com.mcgendai.chat.serverChannelChat
+com.mcgendai.chat.serverChannelChat.channel
+com.mcgendai.chat.serverChannelChat.paper
+com.mcgendai.chat.serverChannelChat.util
