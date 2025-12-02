@@ -1,0 +1,13 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+module:common
+com.mcgendai.chat.common.serverChannelChat.api
+com.mcgendai.chat.common.serverChannelChat.channel
+com.mcgendai.chat.common.serverChannelChat.util
+com.mcgendai.chat.common.serverChannelChat.util.db
+module:plugin
+com.mcgendai.chat.plugin.serverChannelChat
+com.mcgendai.chat.plugin.serverChannelChat.bungee
+com.mcgendai.chat.plugin.serverChannelChat.paper
+com.mcgendai.chat.plugin.serverChannelChat.velocity
