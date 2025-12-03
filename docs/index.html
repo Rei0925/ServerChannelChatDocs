@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class="dark" lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>ServerChannelChat ドキュメント ホーム</title>
+  <script src="command.js"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Fira+Code&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link href="styles.css" rel="stylesheet" />
+  <script id="tailwind-config">
+        tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+            colors: {
+                "primary": "#34D399",
+                "background-light": "#F3F4F6",
+                "background-dark": "#1F2937",
+            },
+            fontFamily: {
+                "display": ["Inter", "Noto Sans JP", "sans-serif"],
+                "code": ["Fira Code", "monospace"]
+            },
+            borderRadius: {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            },
+        }
+        }
+    </script>
+
+  <style>
+    .cmd-word {
+      color: #ffffff; /* 白 */
+      font-weight: 600;
+    }
+    .cmd-arg {
+      color: #34D399; /* 明るい緑 (Tailwind primary に寄せてある) */
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body class="font-display bg-gray-50 dark:bg-background-dark text-gray-800 dark:text-gray-200">
+  <div class="flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-gray-700 px-4 sm:px-6 lg:px-8 h-16 bg-white/80 dark:bg-background-dark/80 backdrop-blur-sm">
+      <div class="flex items-center gap-6">
+        <div class="flex items-center gap-3 text-gray-900 dark:text-white">
+          <span class="material-symbols-outlined text-primary text-3xl">hub</span>
+          <h2 class="text-lg font-bold tracking-[-0.015em]">ServerChannelChat</h2>
+        </div>
+        <label class="hidden md:flex flex-col min-w-40 h-10 max-w-64">
+          <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+            <div class="text-gray-400 dark:text-gray-500 flex bg-gray-100 dark:bg-gray-800 items-center justify-center pl-3 rounded-l-lg border-r-0">
+              <span class="material-symbols-outlined">search</span>
+            </div>
+            <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-800 dark:text-gray-200 focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-gray-100 dark:bg-gray-800 h-full placeholder:text-gray-400 dark:placeholder:text-gray-500 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="ドキュメントを検索..." value="" />
+          </div>
+        </label>
+      </div>
+      <div class="flex items-center gap-3">
+        <button class="flex md:hidden items-center justify-center rounded-lg h-10 w-10 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300">
+          <span class="material-symbols-outlined">search</span>
+        </button>
+        <button class="flex items-center justify-center rounded-lg h-10 w-10 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.286 2.866 7.91 6.839 9.172.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path>
+          </svg>
+        </button>
+        <button class="flex items-center justify-center rounded-lg h-10 w-10 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19.54 5.25a2.25 2.25 0 00-3.18 0l-1.13 1.13a.75.75 0 000 1.06l1.06 1.06a.75.75 0 001.06 0l1.13-1.13a2.25 2.25 0 000-3.18zM10.22 14.83l-1.06-1.06a.75.75 0 00-1.06 0l-1.13 1.13a2.25 2.25 0 000 3.18l.06.06c.88.88 2.3 1.25 3.5 1.06l2.12-.3a.75.75 0 00.56-1.24l-1.05-2.82zm3.3-3.3l-.3-.3a.75.75 0 00-1.06 0l-3.32 3.32a.75.75 0 00-.21.49l-.4 2.12c-.06.32.22.6.53.54l2.12-.4c.18-.03.36-.1.49-.22l3.32-3.32a.75.75 0 000-1.06l-.3-.3zM12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.62 13.63a3.75 3.75 0 01-5.3 0l-1.13-1.13a2.25 2.25 0 010-3.18l.06-.06c.88-.88 2.3-1.25 3.5-1.06l2.12-.3c.32.05.54.36.48.68l-1.05 2.82c-.06.16 0 .34.13.47l.3.3a2.25 2.25 0 010 3.18l-1.13 1.13z"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="flex flex-1 container mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Sidebar -->
+      <aside class="hidden lg:block w-64 shrink-0 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto py-8 pr-8">
+        <nav class="flex flex-col gap-1 text-sm">
+          <details open="">
+            <summary class="flex items-center justify-between cursor-pointer list-none py-2 font-medium text-gray-900 dark:text-white hover:text-primary dark:hover:text-primary transition-colors">
+              ようこそ
+              <span class="material-symbols-outlined text-base transition-transform duration-200">expand_more</span>
+            </summary>
+            <a class="flex items-center gap-2 px-3 py-2 rounded-lg bg-primary/20 text-primary font-medium" href="#">はじめに</a>
+          </details>
+          <details>
+            <summary class="flex items-center justify-between cursor-pointer list-none py-2 font-medium text-gray-900 dark:text-white hover:text-primary dark:hover:text-primary transition-colors">
+              コマンド一覧
+              <span class="material-symbols-outlined text-base transition-transform duration-200">expand_more</span>
+            </summary>
+            <div class="flex flex-col gap-1 pl-3 border-l border-gray-200 dark:border-gray-700 ml-1 mt-1">
+              <details open>
+                <summary class="flex items-center justify-between cursor-pointer list-none py-1 font-medium text-gray-700 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                  基本コマンド
+                  <span class="material-symbols-outlined text-sm transition-transform duration-200">expand_more</span>
+                </summary>
+                <div class="flex flex-col gap-1 pl-3 mt-1">
+                    <a class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-500/10 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" href="#">/ch help</a>
+                    <a class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-500/10 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" href="/docs/commands/ch-create">/ch create</a>
+                    <a class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-500/10 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" href="#">/ch join</a>
+                    <a class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-500/10 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" href="#">/ch g</a>
+                </div>
+              </details>
+              <details>
+                <summary class="flex items-center justify-between cursor-pointer list-none py-1 font-medium text-gray-700 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                  管理者用コマンド
+                  <span class="material-symbols-outlined text-sm transition-transform duration-200">expand_more</span>
+                </summary>
+                <div class="flex flex-col gap-1 pl-3 mt-1">
+                    <a class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-500/10 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" href="#">/ch remove</a>
+                    <a class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-500/10 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" href="#">/ch reload</a>
+                    <a class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-500/10 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" href="#">/ch reset</a>
+                </div>
+              </details>
+            </div>
+          </details>
+          <a class="flex items-center py-2 font-medium text-gray-900 dark:text-white hover:text-primary dark:hover:text-primary transition-colors" href="#">設定</a>
+          <details>
+            <summary class="flex items-center justify-between cursor-pointer list-none py-2 font-medium text-gray-900 dark:text-white hover:text-primary dark:hover:text-primary transition-colors">
+              開発者向け
+              <span class="material-symbols-outlined text-base transition-transform duration-200">expand_more</span>
+            </summary>
+            <div class="flex flex-col gap-1 pl-3 border-l border-gray-200 dark:border-gray-700 ml-1 mt-1">
+              <a class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-500/10 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" href="#">Velocity</a>
+              <a class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-500/10 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" href="#">Paper</a>
+              <a class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-500/10 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" href="#">BungeeCord</a>
+              <a class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-500/10 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" href="#">Sponge</a>
+            </div>
+          </details>
+        </nav>
+      </aside>
+
+      <!-- Article -->
+      <main class="w-full lg:flex-1 py-8 lg:pl-8">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex flex-wrap gap-2 mb-6 text-sm">
+            <a class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary" href="#">ホーム</a>
+            <span class="text-gray-400 dark:text-gray-500">/</span>
+            <a class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary" href="#">ようこそ</a>
+            <span class="text-gray-400 dark:text-gray-500">/</span>
+            <span class="text-gray-800 dark:text-gray-200 font-medium">はじめに</span>
+          </div>
+
+          <article class="prose prose-lg dark:prose-invert max-w-none prose-h1:font-black prose-h1:tracking-tight prose-h2:border-b prose-h2:border-gray-200 dark:prose-h2:border-gray-700 prose-h2:pb-2 prose-a:text-primary hover:prose-a:underline prose-code:font-code prose-code:bg-gray-100 dark:prose-code:bg-gray-800 prose-code:rounded prose-code:px-1.5 prose-code:py-1 prose-code:text-sm prose-code:text-red-500 dark:prose-code:text-red-400">
+            <h1 class="text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]">ServerChannelChatへようこそ</h1>
+            <p class="lead">このプラグインは、複数のMinecraftサーバー間でチャットを同期するためのものです。BungeeCord、Velocity、Paper、Spongeなど、さまざまなサーバープラットフォームに対応しています。</p>
+
+            <h2>主な特徴</h2>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>クロスプラットフォーム対応:</strong> 主要なプロキシおよびサーバーソフトウェアで動作します。</li>
+              <li><strong>柔軟なチャンネル設定:</strong> サーバーごとや権限ごとにチャットチャンネルを自由に設定できます。</li>
+              <li><strong>多機能:</strong> プライベートメッセージ、フォーマットのカスタマイズ、ミュート機能などを搭載しています。</li>
+            </ul>
+
+            <h2>クイックスタート</h2>
+            <p>プラグインを始めるには、まずサーバーに<a href="#">インストール</a>する必要があります。インストールが完了したら、以下の基本的なコマンドを試してみましょう。</p>
+
+            <code data-mc-block id="code1" data-title="MinecraftCommand">
+                /ch create §b&lt;ChannelName&gt;
+            </code>
+
+            <p>このコマンドは、チャンネルを作成します。詳細についてはコマンドタブを確認してください。</p>
+
+            <div class="flex items-start gap-4 p-4 my-6 rounded-lg bg-amber-500/10 text-amber-800 dark:text-amber-200 border border-amber-500/20">
+              <span class="material-symbols-outlined mt-1 text-amber-500">warning</span>
+              <div class="flex flex-col">
+                <h3 class="font-bold mt-0">注意</h3>
+                <p class="text-base">このプラグインは現在ベータ版です。本番環境で使用する前に、必ずデータのバックアップを取ってください。</p>
+              </div>
+            </div>
+
+            <h2>困ったときは？</h2>
+            <p>問題が発生した場合や質問がある場合は、私たちの<a href="#">Discordコミュニティ</a>に参加してください。開発者や他のユーザーがサポートを提供します。</p>
+          </article>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-200 dark:border-gray-700">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-sm text-gray-500 dark:text-gray-400">
+        <p>(c)2025 Rei0925. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
+  
+  <style>
+    details > summary::-webkit-details-marker {
+      display: none;
+    }
+    details[open] > summary span {
+      transform: rotate(180deg);
+    }
+  </style>
+</body>
+</html>
